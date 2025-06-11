@@ -9,4 +9,15 @@ Recap:
                         2. pod 
                         3. service 
                             4 - communication - within or outside cluster 
-    
+
+Cluster -> Jenkins -> RKT -> 
+    1. RHEL -> Master Node
+    2. RHEL -> worker node1 
+    3. RHEL -> worker node 2
+
+
+Ubuntu ->  docker -> kubectl -> 
+    1. k8s Cluster -> 1 master - 2 agents -> K3d -> dokcer container 
+        1. Ubuntu -> Master container
+        2. Ubuntu -> worker node1
+        2. Ubuntu -> worker node2
