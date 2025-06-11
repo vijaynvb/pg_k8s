@@ -1,0 +1,72 @@
+DBA
+Devops
+Developers
+Testers 
+
+www -> http, html, css, scripts
+Dockers -> linux -> CNCF -> VM -> Laptops -> os -> resource -> ram, cpu, io, n/w 
+    self contained -> instance -> app -> dependncies -> os + resource allocated -> 
+        1. os hyperviser -> developer -> laptop -> os -> wsl -> docker instance 
+        2. bare metal hyperviser -> data center 
+
+
+process -> os -> Dockers -> kill pid 
+    linux -> muti processing -> concurrency + parallisum 
+        1- cpu -> time shared between 
+        8 - cpu -> process -> allocate -> resource -> 2 cpu's 
+            1. namespaces
+            2. control groups 
+
+    process management ->
+       1. process -> threads 
+                -> new process fork()
+                -> lambda functional programming -> call back
+
+
+Enterprise application: domain [Banking] [credit and debit]
+    1. web application .net mvc -> db
+    2. mobile application -> android, ios -> db
+    3. atm application
+    4. iot application 
+    5. user management: 
+        register 
+        login 
+        mfa
+
+    benchmark -> 32gb ram, 16 cpu, 100 mbps-> hdd, sdd io, 100mbps n/w -> concorent processing 100
+        vs -> 64gb ram, 32 cpu, 100 mbps-> hdd, sdd io, 1000 mbps n/w -> concorent processing 1000
+        HS -> 1. 64gb ram, 32 cpu, 100 mbps-> hdd, sdd io, 1000 mbps n/w -> concorent processing 1000 -> postgresql  CPU - 80% create a new insatance , avg cpu < 40% delete a instance 
+              2. 64gb ram, 32 cpu, 100 mbps-> hdd, sdd io, 1000 mbps n/w -> concorent processing 1000
+              3. 64gb ram, 32 cpu, 100 mbps-> hdd, sdd io, 1000 mbps n/w -> concorent processing 1000 
+        
+        Non Functional Tolls -> Ecosystem -> AHS
+
+    RDBMS -> Consistency -> 
+            hot active [communication] instance -> 
+            cold pasive [replication, backup -> readonly, reporting] instance -> 
+    nosql -> eventualy consistent 
+            
+Architecture: 
+    1. Monolithic
+    2. Microservices -> Architecture pattern -> Architect or System Designer 
+        Microservices 6 principles 
+            1. modularity
+                services -> amazon.com => 1000 services
+                            1. upgrade -> 1000 seconds the upgrade 
+                            2. deployment -> 11 seconds 
+                    1. single responsibiltiy principle 
+                    2. DDD 
+            2. scalability 
+                1. vertical -> 
+                2. horizontal    
+            3. Uniform interface
+                CRUD -> HTTP protocol
+            4. observability
+            5. hide implementation details 
+                technology for building Rest api -> proprietary
+            6. statelessness 
+                1. never user -> server side session object -> retain who is the user login 
+                2. client side session object -> 
+                        HTTP -> header -> authorization -> jwt oauth 
+
+            

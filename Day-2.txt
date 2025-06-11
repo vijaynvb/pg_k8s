@@ -1,0 +1,12 @@
+Recap:
+
+    1. postgresql -> tools 
+        1. portini, pg_dump ...
+    2. K8s 
+        1. 7 features 
+        2. object -> core
+                        1. namespace
+                        2. pod 
+                        3. service 
+                            4 - communication - within or outside cluster 
+    
