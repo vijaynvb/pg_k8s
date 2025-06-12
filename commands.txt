@@ -14,3 +14,15 @@ select version();
 \! cls : clear the console 
 
 
+Testing client to cluster communication with primary
+
+kubectl apply -f psql-client.yaml
+kubectl get pods
+kubectl get svc
+kubectl get pods
+clear
+kubectl exec - it psql-client.sh
+
+# echo $SERVICE_NAME
+
+PGPASSWORD=$POSTGRES_PASSWORD psql -h "$SERVICE_NAME" -U "$POSTGRES-USER" - d "$POSTGRES_DB"
