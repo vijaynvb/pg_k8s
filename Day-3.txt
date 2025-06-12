@@ -1,0 +1,27 @@
+Questions till now:
+
+
+
+If PostgreSQL logs are full, how to handle
+If all pods becomes replica, how to handle
+If connectivity with Postgres fails, how to handle
+
+Observing and validating metrics via Prometheus/Grafana
+
+Validating failover and recovery under load
+Benchmarking PostgreSQL performance in a K8s cluster
+Testing behavior during rolling updates or pod rescheduling
+Running automated tests that verify database integrity post-restarts 
+
+PostgresOperator CloudnativePG - EDB 
+
+    1. declarative yaml 
+    2. pg tools for facilitating certain features, LocalPtah, barman, , nfs-sub-dir dynamic provision of pv
+    3. Postgres Cluster 
+        pods -> 1 primary, 2 standby 
+
+1. scaling 
+2. promoting 
+3. maintainnce 
+4. what is wal
+5. what is PITR how does it work

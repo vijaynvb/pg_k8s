@@ -1,0 +1,16 @@
+PlSQL Commands:
+
+\l : list all databases
+\c <dbname> : switch to databases
+\dt : list all the tables 
+\d <table name> : describe the table 
+\du : list of users there in database 
+
+select * from pg_stat_activity;  : list all the active users in the database 
+
+select version(); 
+\g : get the version of the pgsql 
+
+\! cls : clear the console 
+
+

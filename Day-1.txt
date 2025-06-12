@@ -70,3 +70,9 @@ Architecture:
                         HTTP -> header -> authorization -> jwt oauth 
 
             
+
+
+    3 postgres 
+        1 primary
+        2 standby 
+        3 standby
