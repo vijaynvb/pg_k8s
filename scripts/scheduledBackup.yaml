@@ -1,0 +1,10 @@
+#scheduledBackup.yaml
+apiVersion: postgresql.cnpg.io/v1
+kind: ScheduledBackup
+metadata:
+  name: daily-backup
+spec:
+  schedule: "0 0 0 * * *" # Every day at 12:00 AM
+  backupOwnerReference: self
+  cluster:
+    name: cluster-example

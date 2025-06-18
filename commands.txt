@@ -1,4 +1,4 @@
-PlSQL Commands:
+PSQL Commands:
 
 \l : list all databases
 \c <dbname> : switch to databases
@@ -23,6 +23,8 @@ kubectl get pods
 clear
 kubectl exec - it psql-client.sh
 
-# echo $SERVICE_NAME
+    # echo $SERVICE_NAME
 
-PGPASSWORD=$POSTGRES_PASSWORD psql -h "$SERVICE_NAME" -U "$POSTGRES-USER" - d "$POSTGRES_DB"
+    # PGPASSWORD=$POSTGRES_PASSWORD psql -h "$SERVICE_NAME" -U "$POSTGRES-USER" - d "$POSTGRES_DB"
+    # INSERT INTO test (name) SELECT 'test' FROM generate_series(1, 1000);
+    # select count(*) from test;
