@@ -1,0 +1,41 @@
+ReCap: 
+    0. operator
+    1. scaling 
+    2. promoting 
+    3. maintainnce 
+    4. what is wal
+    5. what is PITR how does it work
+    6. Upgrade PostgreSQL Version with rolling update feature
+
+Agenda For Today:
+    PostgreSQL Configuration with CloudNativePG
+    Minio as local S3-compatible Object Storage
+    Manual Backup & Restore
+    On-Demand Backups
+    Scheduled Backups
+    Wal Archiving
+    Point-in-Time Recovery (PITR) with PostgreSQL and CloudNativePG
+    benchmarking
+    pgbench
+    CloudNativePG Plugins 
+
+imeperative or declarative statements -> k8s
+
+kubectl apply -f 
+kubectl apply cluster cluster-example --spec.postgresql.pg_hba= '' 
+    1. required pg server 
+
+cloudnative pg: 
+    physical backup -> volumesnapshot -> pv
+    logical backup -> wal managing the object store [json]
+         src [appdb] -> dst [appdb] 
+
+host [windows]  --> firewall -->  vm [85 [9001][32171],83[32171],82[32171]]
+                -->
+
+Postgresql cluster -> minio server [ 9000]
+    same cluster -> service 
+    minio.default.svc.cluster.local 
+
+1. put your cluster in manintance mode 
+2. update the dum with restore 

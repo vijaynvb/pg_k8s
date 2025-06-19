@@ -34,7 +34,9 @@ spec:
     parameters:
       pg_stat_statements.max: "10000"
       pg_stat_statements.track: all
+      max_parallel_workers: 8
     pg_hba:
+       # [scheme, application, user, host, authentication algorithm]
       - host replication all all trust
       - hostssl replication all all trust
       - hostssl replication streaming_replica all cert

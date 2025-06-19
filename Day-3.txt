@@ -1,7 +1,5 @@
 Questions till now:
 
-
-
 If PostgreSQL logs are full, how to handle
 If all pods becomes replica, how to handle
 If connectivity with Postgres fails, how to handle

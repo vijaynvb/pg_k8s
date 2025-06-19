@@ -24,6 +24,11 @@ spec:
     parameters:
       pg_stat_statements.max: "10000"
       pg_stat_statements.track: all
+      wal_level: replica                         # Needed for replication/log shipping
+      archive_mode: "on"
+      archive_timeout: "30s"                     # Force a WAL file to be archived every 30 seconds even if not full
+      wal_writer_delay: "10ms"                   # Make WAL writer wake up more frequently
+      wal_writer_flush_after: "32kB"             # Lower flush threshold to make changes visible to WAL earlier    
       #timezone: "Europe/Amsterdam"
       #"pgaudit.log": "all, -misc"
       #"pgaudit.log_catalog": "off"
@@ -61,8 +66,8 @@ spec:
           key: MINIO_SECRET_KEY
       data:
         immediateCheckpoint: true
-      #wal:
-      #  compression: gzip
-      #  maxParallel: 8
+      wal:
+        compression: gzip
+        maxParallel: 4
       #  encryption: AES256
     retentionPolicy: "1d"
