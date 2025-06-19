@@ -28,3 +28,14 @@ kubectl exec - it psql-client.sh
     # PGPASSWORD=$POSTGRES_PASSWORD psql -h "$SERVICE_NAME" -U "$POSTGRES-USER" - d "$POSTGRES_DB"
     # INSERT INTO test (name) SELECT 'test' FROM generate_series(1, 1000);
     # select count(*) from test;
+
+
+# wall edits
+
+rm -rf pg_k8s
+git clone github.com/vijaynvb/pg_k8s/
+kubectl apply -f cluster-example-upgrade_wal.yaml 
+kubectl cnpg restart cluster-example
+cat sqltest.sql
+kubectl exec -it cluster-example-1 -- psql 
+kubectl describe cluster cluster-example

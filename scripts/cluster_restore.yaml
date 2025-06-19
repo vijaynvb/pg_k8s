@@ -1,0 +1,39 @@
+apiVersion: postgresql.cnpg.io/v1
+kind: Cluster
+metadata:
+  name: cluster-restore
+spec:
+  instances: 1
+  imageName: ghcr.io/cloudnative-pg/postgresql:16.4
+
+  storage:
+    size: 1Gi
+  walStorage:
+    size: 1Gi
+  tablespaces:
+  - name: idx
+    storage:
+      size: 1Gi
+  - name: tmptbs
+    temporary: true
+    storage:
+      size: 1Gi
+
+  bootstrap:
+    recovery:
+      source: cluster-example
+      recoveryTarget:
+        targetTime: '2025-06-19T02:53:36Z' #update this value from the cluster status property first-point of recoverability
+
+  externalClusters:
+    - name: cluster-example
+      barmanObjectStore:
+        destinationPath: "s3://cnp/"
+        endpointURL: "http://minio.default.svc.cluster.local:9000"
+        s3Credentials:
+          accessKeyId:
+            name: minio-creds
+            key: MINIO_ACCESS_KEY
+          secretAccessKey:
+            name: minio-creds
+            key: MINIO_SECRET_KEY
